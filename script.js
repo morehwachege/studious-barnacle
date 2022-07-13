@@ -47,9 +47,12 @@ class Production {
         monthArray = monthArray.slice(0, time)
         // console.log(months)
         // console.log(monthArray)
-        for(let i = 0 ; i < time; i++){
-            console.log(time)
+        let sum = 0;
+        for(let i = 0 ; i < monthArray.length; i++){
+            console.log(time);
+            sum += monthlyIncome[monthArray[i]]
         }
+        console.log(sum)
         // for ()
         console.log(monthArray)
         // monthlyIncome
