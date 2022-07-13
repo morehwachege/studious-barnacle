@@ -42,6 +42,13 @@ class Production {
             }            
             monthArray.push(month);
         };
+        // for (let income in monthlyIncome){
+
+        // }
+        let listIncome = Object.keys(monthlyIncome);
+        listIncome.forEach(function (item){
+            console.log(`Your income for ${item} is ${monthlyIncome[item]}`);
+        })
         monthArray = monthArray.slice(0, time) // get array of months to calculate
         let sum = 0;
         for(let i = 0 ; i < monthArray.length; i++){
@@ -54,4 +61,4 @@ class Production {
 let prod = new Production(12, 3, 454, 32);
 console.log(`Your total production is ${prod.returnTotal()} litres per day`)  // total amount of milk
 // total income with time
-console.log(prod.incomeOverTime(45, 3))
+console.log(`Total production income ${prod.incomeOverTime(45, 3)}`)
