@@ -34,17 +34,28 @@ class Production {
         }
         let monthlyIncome = Object.assign({}, months); // a detached copy of months
         let lenMonths = Object.keys(months).length;
+        let incomePerTime = 0;
+        let monthArray = new Array();
         for (const month in months){
             for( let income in monthlyIncome){
                 if (month === income){
-                    // console.log(months[month]);
-                    monthlyIncome[month] = (Math.floor(selling_price * months[month] * this.total));
-                    // console.log(monthlyIncome)
-                }
+                    monthlyIncome[month] = (Math.floor(selling_price * months[month] * this.total)); // total income in a year
+                }                
             }
+            monthArray.push(month);
         };
+        monthArray = monthArray.slice(0, time)
+        // console.log(months)
+        // console.log(monthArray)
+        for(let i = 0 ; i < time; i++){
+            console.log(time)
+        }
+        // for ()
+        console.log(monthArray)
         // monthlyIncome
-        console.log(monthlyIncome)
+        // console.log(monthlyIncome)
+        // console.log(months)
+        // console.log(incomePerTime)
         // console.log(months.keys(myObj).length)
 
     }
