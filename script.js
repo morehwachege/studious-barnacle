@@ -15,6 +15,10 @@ class Production {
         this.shedB = shedB;
         this.shedC = shedC;
         this.shedD = shedD;
+        this.total = shedA + shedB + shedC + shedD;
+    }
+    returnTotal(){
+        return this.total;
     }
     totalProduction() {
         console.log(`Your production in Shed A is ${this.shedA} litres per day `);
@@ -23,9 +27,11 @@ class Production {
         console.log(`Your production in Shed A is ${this.shedD} litres per day `);
     }
 }
-let gem = totalProduction(12, 3, 454, 32)
-const incomeOverTime = function (rate, time) {
-    // time in days
+let prod =  new Production(12, 3, 454, 32);
+console.log(prod.returnTotal())
+// let gem = totalProduction(12, 3, 454, 32)
+// const incomeOverTime = function (rate, time) {
+//     // time in days
 
-}
-console.log(gem)
+// }
+// console.log(gem)
