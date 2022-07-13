@@ -6,7 +6,7 @@ class Production {
         this.shedD = shedD;
         this.total = shedA + shedB + shedC + shedD;
     }
-    returnTotal(){
+    returnTotal() {
         return this.total;
     }
     totalProduction() {
@@ -15,12 +15,41 @@ class Production {
         console.log(`Your production in Shed C is ${this.shedC} litres per day `);
         console.log(`Your production in Shed D is ${this.shedD} litres per day `);
     }
-    incomeOverTime(selling_price, time){
-        console.log(`Your weekly income will be Ksh. ${(Math.floor((selling_price * time * this.total)/7))}`);
-        console.log(`Your monthly income will be Ksh. ${(Math.floor((selling_price * time * this.total)/30))}`)
+    incomeOverTime(selling_price, time) {
+        console.log(`Your weekly income will be Ksh. ${(Math.floor((selling_price * time * this.total) / 7))}`);
+        console.log(`Your monthly income will be Ksh. ${(Math.floor((selling_price * time * this.total) / 30))}`)
+        const months = {
+            january: 31,
+            february: 28,
+            march: 31,
+            april: 30,
+            may: 31,
+            june: 30,
+            july: 31,
+            august: 31,
+            september: 30,
+            october: 31,
+            november: 30,
+            december: 31
+        }
+        let monthlyIncome = Object.assign({}, months); // a detached copy of months
+        let lenMonths = Object.keys(months).length;
+        for (const month in months){
+            for( let income in monthlyIncome){
+                if (month === income){
+                    // console.log(months[month]);
+                    monthlyIncome[month] = (Math.floor(selling_price * months[month] * this.total));
+                    // console.log(monthlyIncome)
+                }
+            }
+        };
+        // monthlyIncome
+        console.log(monthlyIncome)
+        // console.log(months.keys(myObj).length)
+
     }
 }
-let prod =  new Production(12, 3, 454, 32);
+let prod = new Production(12, 3, 454, 32);
 console.log(prod.returnTotal())  // total amount of milk
 // total income with time
 console.log(prod.incomeOverTime(45, 3))
