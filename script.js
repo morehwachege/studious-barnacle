@@ -7,3 +7,6 @@ let totalProduction = function (shedA, shedB, shedC, shedD){
     console.log(`The total production is ${total} litres per day`);
 }
 totalProduction(12,3,454,32)
+const incomeOverTime = function (rate, time){
+    // time in days
+}
