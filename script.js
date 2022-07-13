@@ -16,10 +16,11 @@ class Production {
         console.log(`Your production in Shed D is ${this.shedD} litres per day `);
     }
     incomeOverTime(selling_price, time){
-        return `Ksh. ${selling_price * time * this.total}`
+        console.log(`Your weekly income will be Ksh. ${(Math.floor((selling_price * time * this.total)/7))}`);
+        console.log(`Your monthly income will be Ksh. ${(Math.floor((selling_price * time * this.total)/30))}`)
     }
 }
 let prod =  new Production(12, 3, 454, 32);
 console.log(prod.returnTotal())  // total amount of milk
 // total income with time
-console.log(prod.incomeOverTime(45, 2))
+console.log(prod.incomeOverTime(45, 3))
