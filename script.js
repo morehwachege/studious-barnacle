@@ -33,8 +33,6 @@ class Production {
             december: 31
         }
         let monthlyIncome = Object.assign({}, months); // a detached copy of months
-        let lenMonths = Object.keys(months).length;
-        let incomePerTime = 0;
         let monthArray = new Array();
         for (const month in months){
             for( let income in monthlyIncome){
@@ -44,7 +42,7 @@ class Production {
             }
             monthArray.push(month);
         };
-        monthArray = monthArray.slice(0, time)
+        monthArray = monthArray.slice(0, time) // get array of months to calculate
         let sum = 0;
         for(let i = 0 ; i < monthArray.length; i++){
             sum += monthlyIncome[monthArray[i]]
