@@ -16,8 +16,8 @@ class Production {
         console.log(`Your production in Shed D is ${this.shedD} litres per day `);
     }
     incomeOverTime(selling_price, time) {
-        console.log(`Your weekly income will be Ksh. ${(Math.floor((selling_price * time * this.total) / 7))}`);
-        console.log(`Your monthly income will be Ksh. ${(Math.floor((selling_price * time * this.total) / 30))}`)
+        // console.log(`Your weekly income will be Ksh. ${(Math.floor((selling_price * time * this.total) / 7))}`);
+        // console.log(`Your monthly income will be Ksh. ${(Math.floor((selling_price * time * this.total) / 30))}`)
         const months = {
             january: 31,
             february: 28,
@@ -45,25 +45,15 @@ class Production {
             monthArray.push(month);
         };
         monthArray = monthArray.slice(0, time)
-        // console.log(months)
-        // console.log(monthArray)
         let sum = 0;
         for(let i = 0 ; i < monthArray.length; i++){
-            console.log(time);
             sum += monthlyIncome[monthArray[i]]
         }
-        console.log(sum)
-        // for ()
-        console.log(monthArray)
-        // monthlyIncome
-        // console.log(monthlyIncome)
-        // console.log(months)
-        // console.log(incomePerTime)
-        // console.log(months.keys(myObj).length)
-
+        // console.log(sum)
+        return sum
     }
 }
 let prod = new Production(12, 3, 454, 32);
-console.log(prod.returnTotal())  // total amount of milk
+// console.log(prod.returnTotal())  // total amount of milk
 // total income with time
 console.log(prod.incomeOverTime(45, 3))
