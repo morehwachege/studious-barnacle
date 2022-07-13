@@ -18,9 +18,3 @@ class Production {
 }
 let prod =  new Production(12, 3, 454, 32);
 console.log(prod.returnTotal())
-// let gem = totalProduction(12, 3, 454, 32)
-// const incomeOverTime = function (rate, time) {
-//     // time in days
-
-// }
-// console.log(gem)
