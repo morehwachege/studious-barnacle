@@ -38,8 +38,8 @@ class Production {
             for( let income in monthlyIncome){
                 if (month === income){
                     monthlyIncome[month] = (Math.floor(selling_price * months[month] * this.total)); // total income in a year
-                }                
-            }
+                }                              
+            }            
             monthArray.push(month);
         };
         monthArray = monthArray.slice(0, time) // get array of months to calculate
@@ -52,6 +52,6 @@ class Production {
     }
 }
 let prod = new Production(12, 3, 454, 32);
-// console.log(prod.returnTotal())  // total amount of milk
+console.log(`Your total production is ${prod.returnTotal()} litres per day`)  // total amount of milk
 // total income with time
 console.log(prod.incomeOverTime(45, 3))
