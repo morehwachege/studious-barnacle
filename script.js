@@ -20,7 +20,7 @@ class Production {
         // console.log(`Your monthly income will be Ksh. ${(Math.floor((selling_price * time * this.total) / 30))}`)
         const months = {
             january: 31,
-            february: 28,
+            february: 29,
             march: 31,
             april: 30,
             may: 31,
@@ -58,7 +58,10 @@ class Production {
         return sum
     }
 }
-let prod = new Production(12, 3, 454, 32);
+let prod = new Production(510, 308, 486, 572);
 console.log(`Your total production is ${prod.returnTotal()} litres per day`)  // total amount of milk
+console.log()
+prod.totalProduction()
+console.log()
 // total income with time
 console.log(`Total production income ${prod.incomeOverTime(45, 3)}`)
