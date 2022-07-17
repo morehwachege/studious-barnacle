@@ -1,3 +1,6 @@
+const month = document.querySelector('#selectMilk');
+
+
 class Production {
     constructor(shedA, shedB, shedC, shedD) {
         this.shedA = shedA;
