@@ -62,7 +62,7 @@ class Production {
     }
 }
 month.addEventListener('change', ()=>{
-    alert('Fuck you won!!')
+    alert('')
 })
 let prod = new Production(12, 3, 454, 32);
 console.log(`Your total production is ${prod.returnTotal()} litres per day`)  // total amount of milk
