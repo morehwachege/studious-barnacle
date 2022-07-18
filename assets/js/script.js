@@ -1,4 +1,7 @@
 const month = document.querySelector('#selectMilk');
+const report  = document.querySelector('.report');
+const items = document.createElement('h6');
+let monthA = {};
 
 
 class Production {
@@ -41,6 +44,7 @@ class Production {
             for( let income in monthlyIncome){
                 if (month === income){
                     monthlyIncome[month] = (Math.floor(selling_price * months[month] * this.total)); // total income in a year
+                    monthA[month] = (Math.floor(selling_price * months[month] * this.total));
                 }                              
             }            
             monthArray.push(month);
@@ -61,10 +65,42 @@ class Production {
         return sum
     }
 }
-let prod = new Production(510, 308, 486, 572);
+month.addEventListener('change', ()=>{
+    // console.log(month.value)
+
+    // if(month.value === monthA)
+    for (let key in monthA){
+        if(month.value == monthA[key]){
+            console.log(`Your income for ${month.value} is ${monthA[key]}`)
+        }
+        else{
+
+            console.log(key)
+            console.log('happy')
+        }
+    }
+})
+
+// const months = {
+//     january: 31,
+//     february: 28,
+//     march: 31,
+//     april: 30,
+//     may: 31,
+//     june: 30,
+//     july: 31,
+//     august: 31,
+//     september: 30,
+//     october: 31,
+//     november: 30,
+//     december: 31
+// }
+let prod = new Production(12, 3, 454, 32);
 console.log(`Your total production is ${prod.returnTotal()} litres per day`)  // total amount of milk
 console.log()
 prod.totalProduction()
 console.log()
 // total income with time
-console.log(`Total production income ${prod.incomeOverTime(45, 3)}`)
+console.log(`Total production income ${prod.incomeOverTime(45, 3)}`);
+
+console.log(monthA);
