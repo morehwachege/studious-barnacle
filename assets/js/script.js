@@ -104,3 +104,4 @@ console.log()
 console.log(`Total production income ${prod.incomeOverTime(45, 3)}`);
 
 console.log(monthA);
+
