@@ -1,4 +1,6 @@
 const month = document.querySelector('#selectMilk');
+const report  = document.quertSelector('.report');
+const items = document.createElement('h6');
 
 
 class Production {
