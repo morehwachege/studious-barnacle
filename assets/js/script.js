@@ -1,5 +1,5 @@
 const month = document.querySelector('#selectMilk');
-const report  = document.quertSelector('.report');
+const report  = document.querySelector('.report');
 const items = document.createElement('h6');
 
 
@@ -64,9 +64,26 @@ class Production {
     }
 }
 month.addEventListener('change', ()=>{
-    alert('')
+    console.log(month.value)
 })
+
+// const months = {
+//     january: 31,
+//     february: 28,
+//     march: 31,
+//     april: 30,
+//     may: 31,
+//     june: 30,
+//     july: 31,
+//     august: 31,
+//     september: 30,
+//     october: 31,
+//     november: 30,
+//     december: 31
+// }
 let prod = new Production(12, 3, 454, 32);
 console.log(`Your total production is ${prod.returnTotal()} litres per day`)  // total amount of milk
 // total income with time
-console.log(`Total production income ${prod.incomeOverTime(45, 3)}`)
+console.log(`Total production income ${prod.incomeOverTime(45, 3)}`);
+
+console.log(months);
