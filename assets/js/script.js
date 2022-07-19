@@ -4,11 +4,17 @@ const items = document.createElement('h4');
 let header = document.querySelector('.main-header');
 let generate = document.querySelector('.generate')
 let monthA = {};
+const submit = document.querySelector('.input-form');
+let shed1 = document.querySelector('#shed1');
+let shed2 = document.querySelector('#shed2');
+let shed3 = document.querySelector('#shed3');
+let shed4 = document.querySelector('#shed4');
 
 
 
 
 report.appendChild(items);
+
 
 class Production {
     constructor(shedA, shedB, shedC, shedD) {
@@ -68,52 +74,57 @@ class Production {
         return sum
     }
 }
-let prod = new Production(12, 3, 454, 32);
-console.log(`Your total production is ${prod.returnTotal()} litres per day`)  // total amount of milk
-console.log()
-prod.totalProduction()
-console.log()
-// total income with time
+// let prod = new Production(shed1.value, shed2.value, shed3.value, shed4.value);
+
+submit.onsubmit = function () {
+    console.log(shed1.value)
+    shed1 = shed1.value;
+    // shed2 = shed2.value;
+    // shed3 =shed3.value;
+    // shed4 = shed4.value
 
 
-console.log(`Total production income ${prod.incomeOverTime(45, 3)}`);
+    let prod = new Production(parseInt(shed1.value), 100, 200, 300);
 
-if(generate){
-    generate.addEventListener('click', () => {
+    if (generate) {
+        generate.addEventListener('click', () => {
 
-        setTimeout(function () {
-            header.style.display = 'none';
-            document.querySelector('form').style.display = 'none';
-            document.querySelector('.title').style.display = 'none';
-            document.querySelector('.new-title').style.display = 'block';
-    
+            setTimeout(function () {
+                header.style.display = 'none';
+                document.querySelector('form').style.display = 'none';
+                document.querySelector('.title').style.display = 'none';
+                document.querySelector('.new-title').style.display = 'block';
+
+                for (let key in monthA) {
+                    items.innerHTML += `The total production for ${key} is ${monthA[key]} litres. Production per day is ${monthA[key] / 30} litres<br>`;
+                }
+                window.print();
+                window.location.reload();
+            });
+        })
+    }
+
+
+    if (month) {
+        month.addEventListener('change', () => {
+
             for (let key in monthA) {
-                items.innerHTML += `The total production for ${key} is ${monthA[key]} litres. Production per day is ${monthA[key] / 30} litres<br>`;
+                if (month.value == key) {
+                    // console.log(`Your income for ${month.value} is ${monthA[key]}`)
+                    items.innerHTML = `Your total production for ${key} is ${monthA[key]} litres. Production per day is ${monthA[key] / 30} litres<br>`;
+                    items.style.marginTop = '30px';
+                }
             }
-            window.print();
-            window.location.reload();
-        });
-    })
+        })
+    } else {
+        console.log('month not available');
+    }
+
 }
-
-if (month) {
-    month.addEventListener('change', () => {
-
-        for (let key in monthA) {
-            if (month.value == key) {
-                // console.log(`Your income for ${month.value} is ${monthA[key]}`)
-                items.innerHTML = `Your total production for ${key} is ${monthA[key]} litres. Production per day is ${monthA[key] / 30} litres<br>`;
-                items.style.marginTop = '30px';
-            }
-        }
-    })
-}else{
-    console.log('month not available');
-}
-
-
 // console.log(monthA);
 // Object.keys(monthA).forEach(function (key) {
 //     items.innerHTML += `Your total production for ${key} is ${monthA[key]} litres per day <br>`;
 //     console.log(key, monthA[key]);
 // });
+// console.log(shed1.value)
+
