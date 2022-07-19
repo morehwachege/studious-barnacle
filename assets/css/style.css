@@ -1,10 +1,11 @@
 *{
     margin: 0px;
     padding: 0px;
+    font-family: "Poppins";
 }
 .navbar{
     /* width: auto; */
-    width: 100px;
+    width: 150px;
     height: 100%;
     background-color: green;
     overflow: none;
@@ -13,6 +14,25 @@
     top: 0;
     box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
     padding-top: 30px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    /* display: flex;
+    flex-direction: column;
+    gap: 30px;
+    justify-content: center;
+    align-items: center; */
+}
+.navbar p{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    color: white;
+}
+.nav-icon{
+    color: #f2f2f2;
 }
 .header{
     position: fixed;
@@ -27,6 +47,7 @@
 }
 .header-title{
     text-align: center;
+    color: #f2f2f2;
 }
 .main{
     width: 100%;
