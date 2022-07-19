@@ -3,6 +3,7 @@
     padding: 0px;
     font-family: "Poppins";
 }
+
 .navbar{
     /* width: auto; */
     width: 150px;
@@ -75,6 +76,9 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+.new-title{
+    display: none;
 }
 /* .form{
     width: 100%;

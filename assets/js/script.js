@@ -1,7 +1,11 @@
 const month = document.querySelector('#selectMilk');
 const report = document.querySelector('.report');
 const items = document.createElement('h2');
+let header = document.querySelector('.main-header');
 let monthA = {};
+
+
+
 
 report.appendChild(items);
 
@@ -63,23 +67,6 @@ class Production {
         return sum
     }
 }
-month.addEventListener('change', () => {
-    // console.log(month.value)
-
-    // if(month.value === monthA)
-    
-    for (let key in monthA) {
-        if (month.value == key) {
-            // console.log(`Your income for ${month.value} is ${monthA[key]}`)
-            items.innerHTML += `Your total production for ${key} is ${monthA[key]} litres. Production per day is ${monthA[key]/30} litres<br>`;
-        }
-        // else {
-        //     items.innerHTML += `Invalid input for ${key} <br>`;
-
-        // }
-    }
-})
-
 let prod = new Production(12, 3, 454, 32);
 console.log(`Your total production is ${prod.returnTotal()} litres per day`)  // total amount of milk
 console.log()
@@ -87,6 +74,26 @@ prod.totalProduction()
 console.log()
 // total income with time
 console.log(`Total production income ${prod.incomeOverTime(45, 3)}`);
+
+document.querySelector('.generate').addEventListener('click', () => {
+    header.style.display = 'none';
+    document.querySelector('form').style.display = 'none';
+    document.querySelector('.title').style.display = 'none';
+    document.querySelector('.new-title').style.display = 'block';
+    window.print();
+    // alert('working')
+})
+
+month.addEventListener('change', () => {
+
+    for (let key in monthA) {
+        if (month.value == key) {
+            // console.log(`Your income for ${month.value} is ${monthA[key]}`)
+            items.innerHTML += `Your total production for ${key} is ${monthA[key]} litres. Production per day is ${monthA[key] / 30} litres<br>`;
+        }
+    }
+})
+
 
 // console.log(monthA);
 // Object.keys(monthA).forEach(function (key) {
