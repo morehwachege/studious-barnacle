@@ -73,18 +73,12 @@ console.log()
 prod.totalProduction()
 console.log()
 // total income with time
+
+
 console.log(`Total production income ${prod.incomeOverTime(45, 3)}`);
 
 document.querySelector('.generate').addEventListener('click', () => {
-    // header.style.display = 'none';
-    // document.querySelector('form').style.display = 'none';
-    // document.querySelector('.title').style.display = 'none';
-    // document.querySelector('.new-title').style.display = 'block';
-
-    // for (let key in monthA) {
-    //     items.innerHTML += `The total production for ${key} is ${monthA[key]} litres. Production per day is ${monthA[key] / 30} litres<br>`;
-    // }
-    // window.print();
+    
     setTimeout(function () {
         header.style.display = 'none';
         document.querySelector('form').style.display = 'none';
