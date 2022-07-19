@@ -80,8 +80,11 @@ document.querySelector('.generate').addEventListener('click', () => {
     document.querySelector('form').style.display = 'none';
     document.querySelector('.title').style.display = 'none';
     document.querySelector('.new-title').style.display = 'block';
+    
+    for (let key in monthA) {
+            items.innerHTML += `The total production for ${key} is ${monthA[key]} litres. Production per day is ${monthA[key] / 30} litres<br>`;
+    }
     window.print();
-    // alert('working')
 })
 
 month.addEventListener('change', () => {
