@@ -1,10 +1,10 @@
-*{
+* {
     margin: 0px;
     padding: 0px;
     font-family: "Poppins";
 }
 
-.navbar{
+.navbar {
     /* width: auto; */
     width: 150px;
     height: 100%;
@@ -25,7 +25,8 @@
     justify-content: center;
     align-items: center; */
 }
-.navbar p a{
+
+.navbar p a {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -35,24 +36,30 @@
     font-weight: 700;
     text-decoration: none;
 }
-.active{
+
+.active {
     color: rgb(69, 69, 69) !important;
 }
-.navbar p a:hover{
+
+.navbar p a:hover {
     color: rgb(69, 69, 69);
     transition: .2s ease;
 }
-.nav-icon{
+
+.nav-icon {
     color: #f2f2f2;
 }
-.nav-icon a{
+
+.nav-icon a {
     color: #f2f2f2;
     cursor: pointer;
 }
-.nav-icon a:hover{
+
+.nav-icon a:hover {
     transition: .2s ease;
 }
-.header{
+
+.header {
     position: fixed;
     top: 0;
     overflow: none;
@@ -63,11 +70,13 @@
     background-color: green;
     box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
 }
-.header-title{
+
+.header-title {
     text-align: center;
     color: #f2f2f2;
 }
-.main{
+
+.main {
     width: 100%;
     height: auto;
     min-height: 100vh;
@@ -77,19 +86,28 @@
     justify-content: center;
     align-items: center;
 }
-.new-title{
+
+.new-title {
     display: none;
 }
+
 /* .form{
     width: 100%;
 } */
-.form-input{
+.form-input {
     width: 500px;
     height: 30px;
 }
-.report{
+
+.report {
     text-align: center;
 }
-h2{
+
+h2 {
     color: #333;
+}
+
+h4 {
+    color: #333;
+    font-weight: 400;
 }

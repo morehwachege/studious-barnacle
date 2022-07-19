@@ -1,7 +1,8 @@
 const month = document.querySelector('#selectMilk');
 const report = document.querySelector('.report');
-const items = document.createElement('h2');
+const items = document.createElement('h4');
 let header = document.querySelector('.main-header');
+let generate = document.querySelector('.generate')
 let monthA = {};
 
 
@@ -77,31 +78,38 @@ console.log()
 
 console.log(`Total production income ${prod.incomeOverTime(45, 3)}`);
 
-document.querySelector('.generate').addEventListener('click', () => {
+if(generate){
+    generate.addEventListener('click', () => {
+
+        setTimeout(function () {
+            header.style.display = 'none';
+            document.querySelector('form').style.display = 'none';
+            document.querySelector('.title').style.display = 'none';
+            document.querySelector('.new-title').style.display = 'block';
     
-    setTimeout(function () {
-        header.style.display = 'none';
-        document.querySelector('form').style.display = 'none';
-        document.querySelector('.title').style.display = 'none';
-        document.querySelector('.new-title').style.display = 'block';
+            for (let key in monthA) {
+                items.innerHTML += `The total production for ${key} is ${monthA[key]} litres. Production per day is ${monthA[key] / 30} litres<br>`;
+            }
+            window.print();
+            window.location.reload();
+        });
+    })
+}
+
+if (month) {
+    month.addEventListener('change', () => {
 
         for (let key in monthA) {
-            items.innerHTML += `The total production for ${key} is ${monthA[key]} litres. Production per day is ${monthA[key] / 30} litres<br>`;
+            if (month.value == key) {
+                // console.log(`Your income for ${month.value} is ${monthA[key]}`)
+                items.innerHTML = `Your total production for ${key} is ${monthA[key]} litres. Production per day is ${monthA[key] / 30} litres<br>`;
+                items.style.marginTop = '30px';
+            }
         }
-        window.print();
-        window.location.reload();
-    });
-})
-
-month.addEventListener('change', () => {
-
-    for (let key in monthA) {
-        if (month.value == key) {
-            // console.log(`Your income for ${month.value} is ${monthA[key]}`)
-            items.innerHTML += `Your total production for ${key} is ${monthA[key]} litres. Production per day is ${monthA[key] / 30} litres<br>`;
-        }
-    }
-})
+    })
+}else{
+    console.log('month not available');
+}
 
 
 // console.log(monthA);
