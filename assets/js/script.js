@@ -71,7 +71,7 @@ month.addEventListener('change', () => {
     for (let key in monthA) {
         if (month.value == key) {
             // console.log(`Your income for ${month.value} is ${monthA[key]}`)
-            items.innerHTML += `Your total production for ${key} is ${monthA[key]} litres per day <br>`;
+            items.innerHTML += `Your total production for ${key} is ${monthA[key]} litres. Production per day is ${monthA[key]/30} litres<br>`;
         }
         // else {
         //     items.innerHTML += `Invalid input for ${key} <br>`;
