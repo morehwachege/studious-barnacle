@@ -9,7 +9,20 @@ let shed1 = document.querySelector('#shed1');
 let shed2 = document.querySelector('#shed2');
 let shed3 = document.querySelector('#shed3');
 let shed4 = document.querySelector('#shed4');
-
+const months = {
+            january: 31,
+            february: 29,
+            march: 31,
+            april: 30,
+            may: 31,
+            june: 30,
+            july: 31,
+            august: 31,
+            september: 30,
+            october: 31,
+            november: 30,
+            december: 31
+        }
 
 
 
@@ -36,20 +49,7 @@ class Production {
     incomeOverTime(selling_price, time) {
         // console.log(`Your weekly income will be Ksh. ${(Math.floor((selling_price * time * this.total) / 7))}`);
         // console.log(`Your monthly income will be Ksh. ${(Math.floor((selling_price * time * this.total) / 30))}`)
-        const months = {
-            january: 31,
-            february: 29,
-            march: 31,
-            april: 30,
-            may: 31,
-            june: 30,
-            july: 31,
-            august: 31,
-            september: 30,
-            october: 31,
-            november: 30,
-            december: 31
-        }
+        
         let monthlyIncome = Object.assign({}, months); // a detached copy of months
         let monthArray = new Array();
         for (const month in months) {
@@ -77,14 +77,21 @@ class Production {
 // let prod = new Production(shed1.value, shed2.value, shed3.value, shed4.value);
 
 submit.onsubmit = function () {
-    console.log(shed1.value)
-    shed1 = shed1.value;
+    console.log(parseInt(shed1.value * 2));
+    console.log(Number(shed1.value));
+    console.log(typeof(shed1.value));
+    shed1 = Number(shed1.value);
+    shed2 = Number(shed2.value);
+    shed3 = Number(shed3.value);
+    shed4 = Number(shed4.value);
+
     // shed2 = shed2.value;
     // shed3 =shed3.value;
     // shed4 = shed4.value
 
-
-    let prod = new Production(parseInt(shed1.value), 100, 200, 300);
+    let prod = new Production(shed1, shed2, shed3, shed4);
+    console.log(prod.incomeOverTime(45,3))
+    // console.log(monthA)
 
     if (generate) {
         generate.addEventListener('click', () => {
