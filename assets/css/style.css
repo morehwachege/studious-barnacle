@@ -97,6 +97,7 @@
 .form-input {
     width: 500px;
     height: 30px;
+    cursor: pointer;
 }
 
 .report {
