@@ -99,14 +99,16 @@
     height: 30px;
     cursor: pointer;
 }
-.input-form{
+
+.input-form {
     display: flex;
     flex-direction: column;
     gap: 30px;
     margin-bottom: 40px;
-    
+
 }
-.input-form-input{
+
+.input-form-input {
     width: 500px;
     height: 40px;
     font-size: 16px;
@@ -115,7 +117,15 @@
     border-radius: 5px;
     border: none;
 }
-.btn-submit{
+
+.btn-submit {
+    width: 200px;
+    height: 40px;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+.form-input.generate {
     width: 200px;
     height: 40px;
     border-radius: 30px;
