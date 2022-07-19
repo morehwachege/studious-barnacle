@@ -10,7 +10,7 @@
     height: 80vh;
     background-color: green;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -23,4 +23,7 @@
 }
 .report{
     text-align: center;
+}
+h2{
+    color: white;
 }
