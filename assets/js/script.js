@@ -89,7 +89,7 @@ submit.onsubmit = function () {
     // shed3 =shed3.value;
     // shed4 = shed4.value
 
-    let prod = new Production(shed1, shed2, shed3, shed4);
+    let prod = new Production(shed1, shed1, 100, 100);
     console.log(prod.incomeOverTime(45,3))
     // console.log(monthA)
 
