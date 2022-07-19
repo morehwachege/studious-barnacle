@@ -12,6 +12,7 @@
     position: fixed;
     top: 0;
     box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+    padding-top: 30px;
 }
 .header{
     position: fixed;
